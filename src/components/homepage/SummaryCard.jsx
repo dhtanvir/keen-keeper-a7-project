@@ -25,10 +25,10 @@ const SummaryCard = () => {
   ];
 
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto px-5">
       <div
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4
-       items-center justify-center gap-3"
+       items-center justify-center gap-3 pb-15 pt-5 border-b-2 border-gray-100"
       >
         {summaryData.map((data) => (
           <>
@@ -38,7 +38,9 @@ const SummaryCard = () => {
                border border-gray-100 space-y-2 py-4
                 bg-white shadow-lg rounded-lg  transition delay-150 duration-300 ease-in-out hover:-translate-y hover:scale-95 hover:bg-white  "
             >
-              <h3 className="text-2xl text-[#244D3F] font-semibold" >{data.item}</h3>
+              <h3 className="text-2xl text-[#244D3F] font-semibold">
+                {data.item}
+              </h3>
               <p className="text-[#64748B]">{data.name}</p>
             </div>
           </>
