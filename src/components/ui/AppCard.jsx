@@ -4,7 +4,8 @@ import React from "react";
 
 const AppCard = ({ app }) => {
   const statusColor = {
-    overdue: "bg-red-400 text-white",
+    
+     "overdue" : "bg-red-400 text-white",
     "almost due": "bg-yellow-400 text-black",
     "on-track": "bg-green-400 text-white",
   };
