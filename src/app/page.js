@@ -1,4 +1,5 @@
 import Banner from "@/components/homepage/Banner";
+import SummaryCard from "@/components/homepage/SummaryCard";
 
 
 export default function Home() {
@@ -6,6 +7,7 @@ export default function Home() {
     <div>
 
       <Banner />
+      <SummaryCard/>
 
 
     </div>
