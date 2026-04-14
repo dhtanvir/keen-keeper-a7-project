@@ -2,7 +2,7 @@
 import logo from '@/assets/img/KeenKeeper.png'
 import Image from "next/image";
 import MyLink from "./MyLink";
-import { FaGithub } from 'react-icons/fa';
+
 import { IoMdHome, IoMdTime } from 'react-icons/io';
 import { BsGraphUp } from 'react-icons/bs';
 

@@ -31,7 +31,7 @@ const SummaryCard = () => {
        items-center justify-center gap-3 pb-15 pt-5 border-b-2 border-gray-100"
       >
         {summaryData.map((data) => (
-          <>
+        
             <div
               key={data.id}
               className="flex flex-col items-center justify-center
@@ -43,7 +43,7 @@ const SummaryCard = () => {
               </h3>
               <p className="text-[#64748B]">{data.name}</p>
             </div>
-          </>
+          
         ))}
       </div>
     </div>

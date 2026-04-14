@@ -8,7 +8,10 @@ const MyLink = ({ href, children, icon }) => {
   return (
     <Link
       href={href}
-      className={`flex items-center gap-2 font-semibold ${pathname === href ? "bg-green-950 text-white px-8 py-1 rounded-md" : ""}`}
+      className=
+      {`flex items-center 
+        gap-2 font-semibold ${pathname === href ?
+         "bg-green-950 text-white px-8 py-1 rounded-md" : ""}`}
     >
       {icon}
       {children}
