@@ -6,12 +6,9 @@ import SummaryCard from "@/components/homepage/SummaryCard";
 export default function Home() {
   return (
     <div>
-
       <Banner />
       <SummaryCard/>
       <FriendsApps/>
-
-
     </div>
   );
 }

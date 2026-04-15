@@ -17,7 +17,8 @@ const FriendsApps = async () => {
       <h5 className="text-balance font-medium py-2">
         Your Friends Apps ({apps.length})
       </h5>
-      <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-4 items-center justify-center gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-2  
+      lg:grid-cols-4 items-center justify-center gap-5">
         {apps.map((app) => (
           <AppCard key={app.id} app={app} />
         ))}
