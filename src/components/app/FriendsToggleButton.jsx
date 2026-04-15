@@ -9,8 +9,8 @@ import { IoCall } from "react-icons/io5";
 const FriendsToggleButton = ({ app }) => {
   const { timeline, setTimeline } = useContext(KeenAppsContext);
 
-  const handleAction = ({ type, name }) => {
-    setTimeline([...timeline, { type, name }]);
+  const handleAction = ({ type, name, icon, date }) => {
+    setTimeline([...timeline, { type, name, icon, date }]);
   };
 
   console.log(setTimeline, "setTimeLine");
@@ -18,8 +18,16 @@ const FriendsToggleButton = ({ app }) => {
 
   return (
     <div className="grid grid-cols-3 gap-4">
+      {/* call btn */}
       <button
-        onClick={() => handleAction({ type: "call", name: app.name })}
+        onClick={() =>
+          handleAction({
+            type: "Call with Sarah ",
+            name: app.name,
+            icon: <IoCall />,
+            date: app.next_due_date,
+          })
+        }
         className="flex items-center gap-2 justify-center p-6
          bg-gray-50 hover:bg-emerald-50 rounded-xl border border-gray-100 
           transition-all group"
@@ -32,8 +40,16 @@ const FriendsToggleButton = ({ app }) => {
           Call
         </span>
       </button>
+      {/* text btn */}
       <button
-        onClick={() => handleAction({ type: "text", name: app.name })}
+        onClick={() =>
+          handleAction({
+            type: "text with Sarah ",
+            name: app.name,
+            icon: <BsChatText />,
+            date: app.next_due_date,
+          })
+        }
         className="flex gap-2 items-center justify-center p-6 bg-gray-50
          hover:bg-emerald-50 rounded-xl border border-gray-100 
                   transition-all group"
@@ -46,8 +62,16 @@ const FriendsToggleButton = ({ app }) => {
           Text
         </span>
       </button>
+      {/* video btn */}
       <button
-        onClick={() => handleAction({ type: "video", name: app.name })}
+        onClick={() =>
+          handleAction({
+            type: "video with Sarah ",
+            name: app.name,
+            icon: <FaVideo />,
+            date: app.next_due_date,
+          })
+        }
         className="flex gap-2 items-center justify-center p-6
          bg-gray-50 hover:bg-emerald-50 rounded-xl border
           border-gray-100 transition-all group"
