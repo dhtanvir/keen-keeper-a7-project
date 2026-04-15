@@ -18,12 +18,12 @@ const TimelinePage = () => {
           <div className="py-10 flex flex-col gap-5">
             {timeline.map((item, index) => (
               <>
-                <div
+                <div key={index}
                   className="bg-white shadow-sm  rounded-lg 
                 px-5 py-5 space-y-5"
                 >
                   <div
-                    key={index}
+                    
                     className="flex items-center  justify-between"
                   >
                     <div className="flex items-center gap-5 ">

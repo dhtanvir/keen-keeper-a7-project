@@ -5,12 +5,14 @@ import { useContext } from "react";
 import { BsChatText } from "react-icons/bs";
 import { FaVideo } from "react-icons/fa";
 import { IoCall } from "react-icons/io5";
+import { toast } from "react-toastify";
 
 const FriendsToggleButton = ({ app }) => {
   const { timeline, setTimeline } = useContext(KeenAppsContext);
 
   const handleAction = ({ type, name, icon, date }) => {
     setTimeline([...timeline, { type, name, icon, date }]);
+    toast.success(`${type} is added to timeline!`);
   };
 
   console.log(setTimeline, "setTimeLine");
