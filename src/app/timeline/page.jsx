@@ -8,22 +8,23 @@ const TimelinePage = () => {
 
   console.log(timeline, " timeline text");
 
+ 
+
   return (
-    <div className="container mx-auto py-10">
+    <div  className="container mx-auto py-10">
       <div className="bg-white border border-gray-200 rounded-lg shadow-sm px-10">
         <h1 className="text-2xl font-bold py-4">
           Timeline pages {timeline.length}
         </h1>
         <div>
           <div className="py-10 flex flex-col gap-5">
-            {timeline.map((item, index) => (
-              <>
+            {timeline?.map((item , index) => (
+            
                 <div key={index}
                   className="bg-white shadow-sm  rounded-lg 
                 px-5 py-5 space-y-5"
                 >
                   <div
-                    
                     className="flex items-center  justify-between"
                   >
                     <div className="flex items-center gap-5 ">
@@ -42,12 +43,15 @@ const TimelinePage = () => {
                         </p>
                       </div>
                     </div>
-                    <button className="btn bg-secondary text-white">
+                    <button
+                      className="btn bg-secondary text-white"
+                      
+                    >
                       <FaTrash />
                     </button>
                   </div>
                 </div>
-              </>
+              
             ))}
           </div>
         </div>

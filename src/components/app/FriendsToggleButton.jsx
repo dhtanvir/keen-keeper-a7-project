@@ -15,8 +15,8 @@ const FriendsToggleButton = ({ app }) => {
     toast.success(`${type} is added to timeline!`);
   };
 
-  console.log(setTimeline, "setTimeLine");
-  console.log(timeline, "timeline");
+  // console.log(setTimeline, "setTimeLine");
+  // console.log(timeline, "timeline");
 
   return (
     <div className="grid grid-cols-3 gap-4">
@@ -24,7 +24,7 @@ const FriendsToggleButton = ({ app }) => {
       <button
         onClick={() =>
           handleAction({
-            type: "Call with Sarah ",
+            type: "Calls with Sarah",
             name: app.name,
             icon: <IoCall />,
             date: app.next_due_date,
@@ -46,7 +46,7 @@ const FriendsToggleButton = ({ app }) => {
       <button
         onClick={() =>
           handleAction({
-            type: "text with Sarah ",
+            type: "Text with Sarah ",
             name: app.name,
             icon: <BsChatText />,
             date: app.next_due_date,
@@ -68,7 +68,7 @@ const FriendsToggleButton = ({ app }) => {
       <button
         onClick={() =>
           handleAction({
-            type: "video with Sarah ",
+            type: "Video with Sarah ",
             name: app.name,
             icon: <FaVideo />,
             date: app.next_due_date,

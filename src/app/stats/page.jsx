@@ -1,74 +1,70 @@
 "use client";
 import { KeenAppsContext } from "@/context/keen.context";
-import { use, useContext, useEffect, useState } from "react";
-import { Legend, Pie, PieChart, Tooltip } from "recharts";
+import { useContext, useEffect, useState } from "react";
+import { Legend, Pie, PieChart, Tooltip, ResponsiveContainer, Cell } from "recharts";
 
 const StatsPage = () => {
   const [apps, setApps] = useState([]);
-
-  const { timeline, setTimeline } = useContext(KeenAppsContext);
+  const { timeline } = useContext(KeenAppsContext);
 
   useEffect(() => {
     const fetchFriends = async () => {
-      const res = await fetch("http://localhost:3000/friends.json");
-      const data = await res.json();
-      setApps(data);
+      try {
+        const res = await fetch("http://localhost:3000/friends.json");
+        const data = await res.json();
+        setApps(data);
+      } catch (err) {
+        console.error("Error fetching data", err);
+      }
     };
     fetchFriends();
   }, []);
 
-  console.log(apps, "apps stats");
-  console.log(timeline, "timeline stats");
 
-
-  const uninstalledAppsLength = apps.length - timeline.length;
-  // console.log(uninstalledAppsLength, installedApps.length, "uninstalledApps");
+  const counts = (timeline || []).reduce((acc, item) => {
+    const type = item.type.toLowerCase();
+  
+    if (type.includes("video")) acc["Video"] = (acc["Video"] || 0) + 1;
+    else if (type.includes("text")) acc["Text"] = (acc["Text"] || 0) + 1;
+    else if (type.includes("call")) acc["Calls"] = (acc["Calls"] || 0) + 1; 
+    return acc;
+  }, {});
 
   const data = [
-    { name: "timeline", value: timeline.length, fill: "#0088FE" },
-    { name: "Uninstalled", value: uninstalledAppsLength, fill: "#FF8042" },
+    { name: "Calls", value: counts["Calls"] || 0, fill: "#163148" },
+    { name: "Video", value: counts["Video"] || 0, fill: "#0088FE" },
+    { name: "Text", value: counts["Text"] || 0, fill: "#FF8042" },
   ];
 
-
   return (
-    <div key={apps.id} className=" my-10 shadow p-10 rounded-md border
-     border-slate-300 container mx-auto">
-      <h1 className="text-2xl font-bold py-4">
-        Timeline pages {timeline.length}
+    <div className="container mx-auto  py-20">
+      <h1 className="text-2xl font-bold py-4 text-center">
+        Timeline entries: {timeline.length}
       </h1>
-      <h1>Stats Page</h1>
 
-      {/* reCh */}
-     <div >
-      <h2 className="font-semibold text-3xl mb-16 text-center">
-        Installed and uninstalled apps
-      </h2>
-      <PieChart
-        style={{
-          width: "100%",
-          maxWidth: "500px",
-          maxHeight: "80vh",
-          margin: "auto",
-          aspectRatio: 1,
-        }}
-        responsive
-      >
-        <Pie
-          data={data}
-          innerRadius="80%"
-          outerRadius="100%"
-          // Corner radius is the rounded edge of each pie slice
-          cornerRadius="50%"
-          fill="#8884d8"
-          // padding angle is the gap between each pie slice
-          paddingAngle={5}
-          dataKey="value"
-          isAnimationActive={true}
-        />
-        <Legend/>
-        <Tooltip/>
-      </PieChart>
-    </div>
+      <div className="w-full" style={{ height: "400px" }}>
+        <h2 className="font-semibold text-3xl mb-10 text-center">
+          Friendship Analytics
+        </h2>
+
+       
+        <ResponsiveContainer >
+          <PieChart>
+            <Pie
+              data={data}
+              innerRadius="70%"
+              outerRadius="90%"
+              cornerRadius={10}
+              paddingAngle={5}
+              dataKey="value"
+              isAnimationActive={true}
+            >
+            </Pie>
+            <Legend />
+            <Tooltip />
+          </PieChart>
+        </ResponsiveContainer>
+      </div>
     </div>
   );
 };

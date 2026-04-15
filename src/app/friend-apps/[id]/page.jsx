@@ -16,14 +16,14 @@ const friendsPromise = async function () {
 const FriendsDetailPage = async ({ params }) => {
   const apps = await friendsPromise();
 
-  console.log(apps, " apps detail data");
+  // console.log(apps, " apps detail data");
 
   const { id } = await params;
-  console.log(id, "id  apps details");
+  // console.log(id, "id  apps details");
 
   const app = apps.find((app) => app.id == id);
 
-  console.log(app, "app details");
+  // console.log(app, "app details");
 
   //   console.log("name ", timeline);
 
@@ -163,7 +163,6 @@ const FriendsDetailPage = async ({ params }) => {
           </div>
         </div>
       </div>
-      {/* detail Card item   */}
     </div>
   );
 };
