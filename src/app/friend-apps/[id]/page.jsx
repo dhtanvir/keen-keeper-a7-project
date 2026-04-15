@@ -27,11 +27,19 @@ const FriendsDetailPage = async ({ params }) => {
 
   //   console.log("name ", timeline);
 
+  const statusColor = {
+    overdue: "bg-red-400 text-white",
+    "almost due": "bg-yellow-400 text-black",
+    "on-track": "bg-green-400 text-white",
+  };
+
   return (
     <div className="container mx-auto px-2 py-10">
       <div className="text-base text-center space-y-2">
         <h1 className="text-balance font-semibold">Friends Detail Page</h1>
-      <p className="text-base px-5">This is the detail page for a specific friend.App ID: {app.id} </p>
+        <p className="text-base px-5">
+          This is the detail page for a specific friend.App ID: {app.id}{" "}
+        </p>
       </div>
       {/* detail Card item */}
       <div
@@ -56,11 +64,23 @@ const FriendsDetailPage = async ({ params }) => {
               </div>
               <h1 className="text-2xl font-bold text-green-700">{app.name}</h1>
               {/* Tags & Status */}
-              <div className="flex items-center justify-center gap-2 py-3">
-                <div className="badge badge-secondary">NEW</div>
-                <div className="flex gap-2">
-                  <div className="badge badge-outline">Fashion</div>
-                  <div className="badge badge-outline">Products</div>
+              <div className="flex flex-col items-center justify-center gap-3 py-3">
+                <div className="flex items-center gap-3">
+                  {app.tags.map((tag, index) => (
+                    <div
+                      key={index}
+                      className="badge badge-success text-[#244D3F]"
+                    >
+                      {tag}
+                    </div>
+                  ))}
+                </div>
+
+                <div
+                  className={`font-bold px-4 py-0.5 
+                rounded-2xl ${statusColor[app.status]}`}
+                >
+                  {app.status}
                 </div>
               </div>
               <p className="text-gray-600">Former colleague, great mentor</p>
