@@ -28,9 +28,11 @@ const FriendsDetailPage = async ({ params }) => {
   //   console.log("name ", timeline);
 
   return (
-    <div className="container mx-auto ">
-      <h1>Friends Detail Page</h1>
-      <p>This is the detail page for a specific friend.App ID: {app.id} </p>
+    <div className="container mx-auto px-2 py-10">
+      <div className="text-base text-center space-y-2">
+        <h1 className="text-balance font-semibold">Friends Detail Page</h1>
+      <p className="text-base px-5">This is the detail page for a specific friend.App ID: {app.id} </p>
+      </div>
       {/* detail Card item */}
       <div
         className="max-w-5xl mx-auto p-6  min-h-screen font-sans
@@ -85,7 +87,7 @@ const FriendsDetailPage = async ({ params }) => {
           {/* Right column */}
           <div className="md:col-span-8  space-y-5  ">
             {/* Stats Row */}
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div
                 className="bg-white p-6 rounded-xl shadow-sm border
                border-gray-100 text-center"

@@ -17,7 +17,7 @@ const TimelinePage = () => {
           Timeline pages {timeline.length}
         </h1>
         <div>
-          <div className="py-10 flex flex-col gap-5">
+          <div className="py-10 flex flex-col gap-5 ">
             {timeline?.map((item , index) => (
             
                 <div key={index}
@@ -27,18 +27,19 @@ const TimelinePage = () => {
                   <div
                     className="flex items-center  justify-between"
                   >
-                    <div className="flex items-center gap-5 ">
+                    <div className="flex items-center gap-5 md:gap-5 ">
                       <div
-                        className="w-12 h-12 bg-white shadow-sm rounded-2xl 
+                        className="  md:w-12 md:h-12 bg-transparent 
+                        md:bg-white md:shadow-sm  rounded-full  md:rounded-2xl 
                       flex items-center justify-center"
                       >
                         {item.icon}
                       </div>
                       <div>
-                        <h6 className="text-xl font-bold text-[#244D3F]">
+                        <h6 className="text-[12px]  md:text-xl font-bold text-[#244D3F]">
                           {item.type}: {item.name}
                         </h6>
-                        <p className="text-balance font-semibold ">
+                        <p className="text-[12px]  md:text-balance font-semibold ">
                           {item.date}
                         </p>
                       </div>
@@ -47,7 +48,7 @@ const TimelinePage = () => {
                       className="btn bg-secondary text-white"
                       
                     >
-                      <FaTrash />
+                      <FaTrash  size={12} />
                     </button>
                   </div>
                 </div>

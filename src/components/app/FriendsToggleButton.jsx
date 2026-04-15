@@ -19,7 +19,7 @@ const FriendsToggleButton = ({ app }) => {
   // console.log(timeline, "timeline");
 
   return (
-    <div className="grid grid-cols-3 gap-4">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
       {/* call btn */}
       <button
         onClick={() =>
