@@ -42,13 +42,13 @@ const StatsPage = () => {
         Timeline entries: {timeline.length}
       </h1>
 
-      <div className="w-full" style={{ height: "400px" }}>
+      <div className="w-full h-full" >
         <h2 className="font-semibold text-3xl mb-10 text-center">
           Friendship Analytics
         </h2>
 
        
-        <ResponsiveContainer >
+        <ResponsiveContainer width="100%" height={300} >
           <PieChart>
             <Pie
               data={data}
