@@ -10,7 +10,12 @@ const StatsPage = () => {
   useEffect(() => {
     const fetchFriends = async () => {
       try {
-        const res = await fetch("http://localhost:3000/friends.json");
+        const res = await fetch(
+    "https://keen-keeper-a7-project.vercel.app/friends.json",
+    {
+      cache: "no-store",
+    },
+  );
         const data = await res.json();
         setApps(data);
       } catch (err) {

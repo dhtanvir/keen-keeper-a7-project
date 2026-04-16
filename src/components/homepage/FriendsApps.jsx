@@ -2,7 +2,12 @@ import React from "react";
 import AppCard from "../ui/AppCard";
 
 const friendsPromise = async function () {
-  const res = await fetch("http://localhost:3000/friends.json");
+  const res = await fetch(
+    "https://keen-keeper-a7-project.vercel.app/friends.json",
+    {
+      cache: "no-store",
+    },
+  );
   const apps = await res.json();
   return apps;
 };
