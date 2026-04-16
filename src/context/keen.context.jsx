@@ -9,10 +9,13 @@ const KeenAppsProvider = ({ children }) => {
 
   const [timeline, setTimeline] = useState([]);
 
+  const [sortingType,setSortingType] = useState("all");
+
   const data = {
-    name: " jajon ",
     timeline,
     setTimeline,
+    sortingType,
+    setSortingType,
   };
 
   return (

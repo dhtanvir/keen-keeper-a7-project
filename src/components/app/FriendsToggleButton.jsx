@@ -9,7 +9,6 @@ import { toast } from "react-toastify";
 
 const FriendsToggleButton = ({ app }) => {
   const { timeline, setTimeline } = useContext(KeenAppsContext);
-
   const handleAction = ({ type, name, icon, date }) => {
     setTimeline([...timeline, { type, name, icon, date }]);
     toast.success(`${type} is added to timeline!`);
@@ -24,7 +23,7 @@ const FriendsToggleButton = ({ app }) => {
       <button
         onClick={() =>
           handleAction({
-            type: "Calls with Sarah",
+            type: "calls",
             name: app.name,
             icon: <IoCall />,
             date: app.next_due_date,
@@ -46,7 +45,7 @@ const FriendsToggleButton = ({ app }) => {
       <button
         onClick={() =>
           handleAction({
-            type: "Text with Sarah ",
+            type: "text",
             name: app.name,
             icon: <BsChatText />,
             date: app.next_due_date,
@@ -68,7 +67,7 @@ const FriendsToggleButton = ({ app }) => {
       <button
         onClick={() =>
           handleAction({
-            type: "Video with Sarah ",
+            type: "video",
             name: app.name,
             icon: <FaVideo />,
             date: app.next_due_date,
