@@ -34,7 +34,7 @@ Seamless experience across mobile, tablet, and desktop devices.
 
 ## 🌍 Live Demo
 
-👉 https://keen-keeper-a7-project.netlify.app/
+👉 [https://keen-keeper-a7-project.netlify.app](https://keen-keeper-a7-project.vercel.app)
 
 ---
 
