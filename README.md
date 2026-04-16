@@ -22,9 +22,9 @@ Keen Keeper is a modern web application designed to help users efficiently manag
 
 Easily track and manage important records with a structured and user-friendly interface.
 
-### 🔍 2. Smart Filtering & Sorting
+### 🔍 2. Smart Filtering 
 
-Quickly find and organize data using powerful filtering and sorting options.
+Quickly find and organize data using powerful filtering .
 
 ### 📱 3. Fully Responsive Design
 
